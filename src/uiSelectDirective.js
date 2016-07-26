@@ -76,6 +76,10 @@ uis.directive('uiSelect',
           });
         }
 
+        attrs.$observe('validation', function () {
+          $select.customValidation = attrs.validation;
+        });
+
         scope.$watch(function () { return scope.$eval(attrs.searchEnabled); }, function(newVal) {
           $select.searchEnabled = newVal !== undefined ? newVal : uiSelectConfig.searchEnabled;
         });

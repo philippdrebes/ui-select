@@ -43,6 +43,8 @@ uis.controller('uiSelectCtrl',
   ctrl.clickTriggeredSelect = false;
   ctrl.$filter = $filter;
   ctrl.$element = $element;
+  ctrl.customValidation = undefined;
+  ctrl.inputBlur = function () { if (ctrl.customValidation) $scope.$eval(ctrl.customValidation) };
 
   // Use $injector to check for $animate and store a reference to it
   ctrl.$animate = (function () {

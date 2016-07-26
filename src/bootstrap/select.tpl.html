@@ -8,7 +8,8 @@
          class="form-control ui-select-search"
          placeholder="{{$select.placeholder}}"
          ng-model="$select.search"
-         ng-show="$select.searchEnabled && $select.open">
+         ng-show="$select.searchEnabled && $select.open"
+         ng-blur="$select.inputBlur()">
   <div class="ui-select-choices"></div>
   <div class="ui-select-no-choice"></div>
 </div>
